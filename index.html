@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baby Shower Invitation — Shalini & Madhusudan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-cream: #FAF7F2;
+      --bg-ivory: #FFFDF9;
+      --sage: #8FA998;
+      --sage-dark: #6E8A78;
+      --sage-light: #EBF1EC;
+      --terracotta: #D99B82;
+      --terracotta-dark: #C27F65;
+      --terracotta-light: #F9EDE8;
+      --charcoal: #2E2E2E;
+      --charcoal-soft: #5C5B57;
+      --border-soft: rgba(143, 169, 152, 0.28);
+      --shadow-card: 0 12px 32px rgba(46, 46, 46, 0.05);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-cream);
+      color: var(--charcoal);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      background-image:
+        radial-gradient(circle at 12% 8%, rgba(143, 169, 152, 0.14) 0%, transparent 42%),
+        radial-gradient(circle at 88% 35%, rgba(217, 155, 130, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 20% 80%, rgba(143, 169, 152, 0.12) 0%, transparent 45%);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Typography */
+    h1, h2, h3, .serif {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      color: var(--charcoal);
+      line-height: 1.15;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--sage-dark);
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(250, 247, 242, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .topbar-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand-tag {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--charcoal-soft);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--sage-dark);
+    }
+
+    /* Floating Botanical Accents */
+    .ambient-wrap {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .float-leaf {
+      position: absolute;
+      opacity: 0.35;
+      animation: gentleFloat 9s ease-in-out infinite;
+    }
+
+    .float-leaf.one {
+      top: 90px;
+      left: -18px;
+      width: 130px;
+    }
+
+    .float-leaf.two {
+      top: 44%;
+      right: -20px;
+      width: 140px;
+      animation-delay: 2.5s;
+    }
+
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(2.5deg); }
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 64px 20px 72px;
+    }
+
+    .crest {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 20px;
+      color: var(--sage-dark);
+    }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      margin: 12px 0 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      color: var(--terracotta-dark);
+      margin-bottom: 24px;
+    }
+
+    .date-pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px 16px;
+      background: var(--bg-ivory);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-card);
+      border-radius: 999px;
+      padding: 10px 24px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 36px;
+    }
+
+    .dot-sep {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--terracotta);
+    }
+
+    /* Countdown */
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(68px, 108px));
+      justify-content: center;
+      gap: 12px;
+      margin: 0 auto 32px;
+    }
+
+    .count-box {
+      background: var(--bg-ivory);
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 16px 8px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .count-num {
+      font-family: var(--font-serif);
+      font-size: clamp(1.85rem, 4vw, 2.5rem);
+      font-weight: 600;
+      color: var(--charcoal);
+      line-height: 1;
+      display: block;
+    }
+
+    .count-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--charcoal-soft);
+      margin-top: 6px;
+      display: block;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.18s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--sage-dark);
+      color: #FFFFFF;
+      box-shadow: 0 8px 20px rgba(110, 138, 120, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: #5D7867;
+    }
+
+    .btn-secondary {
+      background: var(--bg-ivory);
+      color: var(--charcoal);
+      border-color: var(--border-soft);
+    }
+
+    .btn-secondary:hover {
+      background: var(--sage-light);
+    }
+
+    .btn-terracotta {
+      background: var(--terracotta);
+      color: #FFFFFF;
+    }
+
+    .btn-terracotta:hover {
+      background: var(--terracotta-dark);
+    }
+
+    /* Section Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 12px auto 56px;
+      color: var(--sage);
+    }
+
+    .divider-line {
+      height: 1px;
+      width: 84px;
+      background: var(--border-soft);
+    }
+
+    /* Section Base */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 24px 0 64px;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 36px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4.5vw, 2.9rem);
+      margin-top: 8px;
+    }
+
+    /* Story Card */
+    .story-card {
+      background: var(--bg-ivory);
+      border: 1px solid var(--border-soft);
+      border-radius: 28px;
+      padding: clamp(28px, 5vw, 48px);
+      box-shadow: var(--shadow-card);
+      max-width: 780px;
+      margin: 0 auto 36px;
+    }
+
+    .story-text {
+      font-size: 1.05rem;
+      color: var(--charcoal-soft);
+      line-height: 1.8;
+    }
+
+    .story-text::first-letter {
+      font-family: var(--font-serif);
+      font-size: 3.4rem;
+      float: left;
+      line-height: 0.85;
+      padding-right: 12px;
+      padding-top: 4px;
+      color: var(--terracotta-dark);
+    }
+
+    .story-signoff {
+      margin-top: 22px;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--charcoal);
+      text-align: right;
+    }
+
+    /* Photo Gallery */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 720px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+      }
+    }
+
+    .photo-card {
+      background: var(--bg-ivory);
+      border: 1px solid var(--border-soft);
+      border-radius: 24px;
+      padding: 12px 12px 18px;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+    }
+
+    .photo-frame {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: 140px 140px 18px 18px;
+      overflow: hidden;
+      background: var(--sage-light);
+      cursor: pointer;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .photo-card:hover .photo-frame img {
+      transform: scale(1.03);
+    }
+
+    .photo-upload-hint {
+      position: absolute;
+      inset: 0;
+      background: rgba(46, 46, 46, 0.42);
+      color: #FFFFFF;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      padding: 12px;
+    }
+
+    .photo-frame:hover .photo-upload-hint {
+      opacity: 1;
+    }
+
+    .photo-caption {
+      margin-top: 12px;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--charcoal-soft);
+    }
+
+    /* Event Details Grid */
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 720px) {
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .detail-card {
+      background: var(--bg-ivory);
+      border: 1px solid var(--border-soft);
+      border-radius: 26px;
+      padding: 32px 28px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .icon-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .icon-badge.sage {
+      background: var(--sage-light);
+      color: var(--sage-dark);
+    }
+
+    .icon-badge.terracotta {
+      background: var(--terracotta-light);
+      color: var(--terracotta-dark);
+    }
+
+    .detail-heading {
+      font-size: 1.65rem;
+      margin-bottom: 10px;
+    }
+
+    .detail-primary {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+
+    .detail-secondary {
+      font-size: 0.95rem;
+      color: var(--charcoal-soft);
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .btn-sm {
+      padding: 9px 16px;
+      font-size: 0.84rem;
+    }
+
+    /* Stylized Map Card */
+    .map-preview {
+      margin-top: 24px;
+      background: var(--bg-ivory);
+      border: 1px solid var(--border-soft);
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .map-visual {
+      flex: 1 1 260px;
+      min-height: 130px;
+      border-radius: 18px;
+      background-color: var(--sage-light);
+      background-image:
+        linear-gradient(rgba(143, 169, 152, 0.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(143, 169, 152, 0.22) 1px, transparent 1px);
+      background-size: 24px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      text-align: center;
+      position: relative;
+    }
+
+    .map-pin {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 16px rgba(217, 155, 130, 0.45);
+      margin-bottom: 8px;
+    }
+
+    .map-info {
+      flex: 1 1 280px;
+    }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px 20px 72px;
+      border-top: 1px solid var(--border-soft);
+      margin-top: 20px;
+    }
+
+    .footer-names {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    .footer-note {
+      font-size: 0.9rem;
+      color: var(--charcoal-soft);
+      margin-bottom: 22px;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--charcoal);
+      color: #FFFFFF;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 500;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      z-index: 100;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 480px) {
+      .nav-links {
+        gap: 12px;
+      }
+      .countdown-grid {
+        gap: 8px;
+      }
+      .hero {
+        padding-top: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Floating Botanical Leaves -->
+  <div class="ambient-wrap" aria-hidden="true">
+    <svg class="float-leaf one" viewBox="0 0 120 180" fill="none">
+      <path d="M20 170C35 110 60 60 105 15" stroke="#8FA998" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="48" cy="118" rx="18" ry="10" transform="rotate(-32 48 118)" fill="#8FA998"/>
+      <ellipse cx="78" cy="96" rx="17" ry="9" transform="rotate(24 78 96)" fill="#8FA998"/>
+      <ellipse cx="64" cy="68" rx="16" ry="9" transform="rotate(-28 64 68)" fill="#8FA998"/>
+      <ellipse cx="92" cy="48" rx="14" ry="8" transform="rotate(20 92 48)" fill="#8FA998"/>
+    </svg>
+    <svg class="float-leaf two" viewBox="0 0 120 180" fill="none">
+      <path d="M100 170C85 110 60 60 15 15" stroke="#D99B82" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="72" cy="118" rx="18" ry="10" transform="rotate(32 72 118)" fill="#D99B82"/>
+      <ellipse cx="42" cy="96" rx="17" ry="9" transform="rotate(-24 42 96)" fill="#D99B82"/>
+      <ellipse cx="56" cy="68" rx="16" ry="9" transform="rotate(28 56 68)" fill="#D99B82"/>
+    </svg>
+  </div>
+
+  <!-- Minimal Sticky Navigation -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#top" class="brand-tag">Shalini & Madhusudan</a>
+      <nav class="nav-links" aria-label="Invitation sections">
+        <a href="#story">Our Story</a>
+        <a href="#details">Details</a>
+        <a href="#location">Location</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 1. Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <svg class="crest" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.55"/>
+          <path d="M50 82C33 68 25 48 34 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M50 82C67 68 75 48 66 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <ellipse cx="32" cy="56" rx="9" ry="5" transform="rotate(-30 32 56)" fill="#8FA998" opacity="0.75"/>
+          <ellipse cx="68" cy="56" rx="9" ry="5" transform="rotate(30 68 56)" fill="#8FA998" opacity="0.75"/>
+          <ellipse cx="30" cy="38" rx="8" ry="4.5" transform="rotate(-18 30 38)" fill="#8FA998" opacity="0.85"/>
+          <ellipse cx="70" cy="38" rx="8" ry="4.5" transform="rotate(18 70 38)" fill="#8FA998" opacity="0.85"/>
+          <circle cx="50" cy="21" r="3.5" fill="#D99B82"/>
+        </svg>
+
+        <span class="eyebrow">A Celebration of Love & New Beginnings</span>
+        <h1 class="hero-title">Shalini & Madhusudan</h1>
+        <p class="hero-subtitle">Honoring the Parents-to-Be</p>
+
+        <div class="date-pill">
+          <span>Sunday, Dec 13, 2026</span>
+          <span class="dot-sep" aria-hidden="true"></span>
+          <span>10:00 AM – 1:00 PM</span>
+        </div>
+
+        <!-- Live Countdown Timer -->
+        <div class="countdown-grid" role="timer" aria-label="Countdown to the baby shower">
+          <div class="count-box">
+            <span class="count-num" id="cdDays">--</span>
+            <span class="count-label">Days</span>
+          </div>
+          <div class="count-box">
+            <span class="count-num" id="cdHours">--</span>
+            <span class="count-label">Hours</span>
+          </div>
+          <div class="count-box">
+            <span class="count-num" id="cdMins">--</span>
+            <span class="count-label">Minutes</span>
+          </div>
+          <div class="count-box">
+            <span class="count-num" id="cdSecs">--</span>
+            <span class="count-label">Seconds</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button type="button" class="btn btn-primary" id="heroCalendarBtn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Save the Date (.ics)
+          </button>
+          <a href="#details" class="btn btn-secondary">Event Details</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <span class="divider-line"></span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2C7 7 5 12 12 22C19 12 17 7 12 2Z"/></svg>
+      <span class="divider-line"></span>
+    </div>
+
+    <!-- 2. Our Story & Photo Gallery / Bump & Beyond -->
+    <section id="story" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Our Journey</span>
+          <h2 class="section-title">Bump & Beyond</h2>
+        </div>
+
+        <div class="story-card">
+          <p class="story-text">From quiet Sunday mornings dreaming about tiny footsteps to preparing a warm, sunlit space at home, our hearts have grown fuller with every passing week. We would be honored to gather with our favorite people for an afternoon of laughter, warm tea, garden blooms, and sweet blessings as we celebrate this special milestone together.</p>
+          <p class="story-signoff">With love, Shalini & Madhusudan</p>
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="photo-grid" aria-label="Moments photo gallery">
+          <figure class="photo-card">
+            <label class="photo-frame" title="Tap to preview a photo">
+              <img src="image1.jpg" alt="Soft sunlit nursery details" />
+              <span class="photo-upload-hint">Tap to change photo</span>
+              <input type="file" accept="image/*" hidden class="photo-input" />
+            </label>
+            <figcaption class="photo-caption">Sunlit mornings & gentle dreams</figcaption>
+          </figure>
+
+          <figure class="photo-card">
+            <label class="photo-frame" title="Tap to preview a photo">
+              <img src="image2.jpg" alt="Tiny knit baby essentials" />
+              <span class="photo-upload-hint">Tap to change photo</span>
+              <input type="file" accept="image/*" hidden class="photo-input" />
+            </label>
+            <figcaption class="photo-caption">Getting the little corner ready</figcaption>
+          </figure>
+
+          <figure class="photo-card">
+            <label class="photo-frame" title="Tap to preview a photo">
+              <img src="image3.jpg" alt="Botanical garden blooms" />
+              <span class="photo-upload-hint">Tap to change photo</span>
+              <input type="file" accept="image/*" hidden class="photo-input" />
+            </label>
+            <figcaption class="photo-caption">Blooms & blessings ahead</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Event Details & Interactive Map -->
+    <section id="details" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">When & Where</span>
+          <h2 class="section-title">Celebration Details</h2>
+        </div>
+
+        <div class="details-grid">
+          <!-- Date & Time Card -->
+          <article class="detail-card">
+            <div>
+              <div class="icon-badge sage" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <h3 class="detail-heading">Date & Time</h3>
+              <p class="detail-primary">Sunday, Dec 13, 2026</p>
+              <p class="detail-secondary">10:00 AM – 1:00 PM</p>
+            </div>
+
+            <div class="card-actions">
+              <button type="button" class="btn btn-primary btn-sm" id="cardCalendarBtn">
+                Download .ics Calendar
+              </button>
+            </div>
+          </article>
+
+          <!-- Venue Card -->
+          <article class="detail-card" id="location">
+            <div>
+              <div class="icon-badge terracotta" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <h3 class="detail-heading">The Venue</h3>
+              <p class="detail-primary">Neralu Courtyard</p>
+              <p class="detail-secondary">1st Main Rd, off Nagarabhavi Main Road, SVG Nagar, Govindaraja Nagar Ward, Mudalapalya, Nagarbhavi, Bengaluru, Karnataka 560072</p>
+            </div>
+
+            <div class="card-actions">
+              <a class="btn btn-terracotta btn-sm" href="https://www.google.com/maps/search/?api=1&query=Neralu%20Courtyard%2C%201st%20Main%20Rd%2C%20off%20Nagarabhavi%20Main%20Road%2C%20SVG%20Nagar%2C%20Govindaraja%20Nagar%20Ward%2C%20Mudalapalya%2C%20Nagarbhavi%2C%20Bengaluru%2C%20Karnataka%20560072" target="_blank" rel="noopener noreferrer">
+                Open in Google Maps
+              </a>
+              <button type="button" class="btn btn-secondary btn-sm" id="copyAddressBtn">
+                Copy Address
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Map Preview Bar -->
+        <div class="map-preview">
+          <div class="map-visual">
+            <div class="map-pin" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <strong class="serif" style="font-size: 1.25rem;">Neralu Courtyard</strong>
+            <span style="font-size: 0.82rem; color: var(--charcoal-soft);">Nagarbhavi, Bengaluru 560072</span>
+          </div>
+          <div class="map-info">
+            <span class="eyebrow" style="margin-bottom: 6px;">Getting There</span>
+            <h3 class="serif" style="font-size: 1.5rem; margin-bottom: 8px;">Directions & Navigation</h3>
+            <p class="detail-secondary" style="margin-bottom: 14px;">Tap below to launch turn-by-turn directions directly on your phone.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/search/?api=1&query=Neralu%20Courtyard%2C%201st%20Main%20Rd%2C%20off%20Nagarabhavi%20Main%20Road%2C%20SVG%20Nagar%2C%20Govindaraja%20Nagar%20Ward%2C%20Mudalapalya%2C%20Nagarbhavi%2C%20Bengaluru%2C%20Karnataka%20560072" target="_blank" rel="noopener noreferrer">Google Maps</a>
+              <a class="btn btn-secondary btn-sm" href="https://maps.apple.com/?q=Neralu%20Courtyard%2C%201st%20Main%20Rd%2C%20off%20Nagarabhavi%20Main%20Road%2C%20SVG%20Nagar%2C%20Govindaraja%20Nagar%20Ward%2C%20Mudalapalya%2C%20Nagarbhavi%2C%20Bengaluru%2C%20Karnataka%20560072" target="_blank" rel="noopener noreferrer">Apple Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="footer-names">Shalini & Madhusudan</p>
+      <p class="footer-note">We can’t wait to celebrate this joyful chapter with you.</p>
+      <button type="button" class="btn btn-secondary btn-sm" id="shareWhatsappBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Share via WhatsApp
+      </button>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const EVENT_DETAILS = {
+      parentsNames: "Shalini & Madhusudan",
+      eventStartISO: "2026-12-13T10:00:00+05:30",
+      eventEndISO: "2026-12-13T13:00:00+05:30",
+      displayDate: "Sunday, Dec 13, 2026",
+      displayTime: "10:00 AM – 1:00 PM",
+      venueName: "Neralu Courtyard",
+      venueAddress: "1st Main Rd, off Nagarabhavi Main Road, SVG Nagar, Govindaraja Nagar Ward, Mudalapalya, Nagarbhavi, Bengaluru, Karnataka 560072"
+    };
+
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      toast.textContent = msg;
+      toast.classList.add("show");
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
+    }
+
+    // Live Countdown Timer
+    function updateCountdown() {
+      const target = new Date(EVENT_DETAILS.eventStartISO).getTime();
+      const now = Date.now();
+      const diff = Math.max(0, target - now);
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("cdDays").textContent = String(days).padStart(2, "0");
+      document.getElementById("cdHours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("cdMins").textContent = String(mins).padStart(2, "0");
+      document.getElementById("cdSecs").textContent = String(secs).padStart(2, "0");
+    }
+
+    // Photo Gallery Local Preview
+    document.querySelectorAll(".photo-card").forEach((card) => {
+      const input = card.querySelector(".photo-input");
+      const img = card.querySelector("img");
+      input.addEventListener("change", (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          img.src = ev.target.result;
+          showToast("Photo preview updated");
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+
+    // Generate & Download .ics File
+    function downloadICS() {
+      const start = new Date(EVENT_DETAILS.eventStartISO);
+      const end = new Date(EVENT_DETAILS.eventEndISO);
+
+      const formatICSDate = (date) => date.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+
+      const icsContent = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Baby Shower Invitation//EN",
+        "BEGIN:VEVENT",
+        `UID:baby-shower-${Date.now()}@invitation`,
+        `DTSTAMP:${formatICSDate(new Date())}`,
+        `DTSTART:${formatICSDate(start)}`,
+        `DTEND:${formatICSDate(end)}`,
+        `SUMMARY:Baby Shower — ${EVENT_DETAILS.parentsNames}`,
+        `LOCATION:${EVENT_DETAILS.venueName}, ${EVENT_DETAILS.venueAddress}`,
+        `DESCRIPTION:Join us to celebrate ${EVENT_DETAILS.parentsNames}!`,
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Shalini-Madhusudan-Baby-Shower.ics";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("Calendar invite (.ics) downloaded");
+    }
+
+    // Copy Address
+    document.getElementById("copyAddressBtn").addEventListener("click", async () => {
+      const full = `${EVENT_DETAILS.venueName}, ${EVENT_DETAILS.venueAddress}`;
+      try {
+        await navigator.clipboard.writeText(full);
+        showToast("Venue address copied");
+      } catch {
+        showToast("Could not copy address");
+      }
+    });
+
+    // Share via WhatsApp
+    document.getElementById("shareWhatsappBtn").addEventListener("click", async () => {
+      const text = `You're invited to celebrate ${EVENT_DETAILS.parentsNames}!\nDate: ${EVENT_DETAILS.displayDate} (${EVENT_DETAILS.displayTime})\nVenue: ${EVENT_DETAILS.venueName}, ${EVENT_DETAILS.venueAddress}\nInvitation: ${window.location.href}`;
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: `Baby Shower — ${EVENT_DETAILS.parentsNames}`, text, url: window.location.href });
+          return;
+        } catch {}
+      }
+      try {
+        await navigator.clipboard.writeText(text);
+        showToast("Invitation message & link copied for WhatsApp");
+      } catch {
+        showToast("Ready to share link");
+      }
+    });
+
+    // Calendar buttons
+    document.getElementById("heroCalendarBtn").addEventListener("click", downloadICS);
+    document.getElementById("cardCalendarBtn").addEventListener("click", downloadICS);
+
+    // Scroll Reveal Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    // Start Countdown
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
