@@ -6,23 +6,41 @@
   <title>Baby Shower Invitation — Shalini & Madhusudan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg-cream: #FAF7F2;
-      --bg-ivory: #FFFDF9;
-      --sage: #8FA998;
-      --sage-dark: #6E8A78;
-      --sage-light: #EBF1EC;
-      --terracotta: #D99B82;
-      --terracotta-dark: #C27F65;
-      --terracotta-light: #F9EDE8;
-      --charcoal: #2E2E2E;
-      --charcoal-soft: #5C5B57;
-      --border-soft: rgba(143, 169, 152, 0.28);
-      --shadow-card: 0 12px 32px rgba(46, 46, 46, 0.05);
+      --bg-warm: #F4F8EC;
+      --bg-card: rgba(255, 255, 255, 0.92);
+      --sage: #3E8E5A;
+      --sage-deep: #245C3A;
+      --sage-soft: #E2F1DE;
+      --coral: #E0863A;
+      --coral-deep: #B35A22;
+      --coral-soft: #FDEBD9;
+      --marigold: #F2C14E;
+      --marigold-soft: #FFF6D6;
+      --sky: #3FA7A0;
+      --sky-soft: #DDF3EF;
+      --lavender: #8A6E3D;
+      --lavender-soft: #F3EBDD;
+      --ink: #1F2D1F;
+      --ink-soft: #56634F;
+      --border-joy: rgba(179, 90, 34, 0.22);
+      --shadow-joy: 0 14px 34px rgba(36, 92, 58, 0.12);
       --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      /* Background glows, blobs and halo */
+      --glow-1: rgba(62, 142, 90, 0.2);
+      --glow-2: rgba(242, 193, 78, 0.2);
+      --glow-3: rgba(224, 134, 58, 0.18);
+      --glow-4: rgba(63, 167, 160, 0.18);
+      --glow-5: rgba(138, 110, 61, 0.14);
+      --blob-1: rgba(62, 142, 90, 0.3);
+      --blob-2: rgba(242, 193, 78, 0.3);
+      --blob-3: rgba(224, 134, 58, 0.26);
+      --halo-1: rgba(242, 193, 78, 0.42);
+      --halo-2: rgba(62, 142, 90, 0.16);
     }
 
     *, *::before, *::after {
@@ -33,37 +51,39 @@
 
     html {
       scroll-behavior: smooth;
-      background-color: var(--bg-cream);
-      color: var(--charcoal);
+      background-color: var(--bg-warm);
+      color: var(--ink);
       font-family: var(--font-sans);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
     body {
-      background-color: var(--bg-cream);
+      background-color: var(--bg-warm);
       background-image:
-        radial-gradient(circle at 12% 8%, rgba(143, 169, 152, 0.14) 0%, transparent 42%),
-        radial-gradient(circle at 88% 35%, rgba(217, 155, 130, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 20% 80%, rgba(143, 169, 152, 0.12) 0%, transparent 45%);
+        radial-gradient(circle at 10% 10%, var(--glow-1) 0%, transparent 40%),
+        radial-gradient(circle at 90% 14%, var(--glow-2) 0%, transparent 42%),
+        radial-gradient(circle at 84% 58%, var(--glow-3) 0%, transparent 45%),
+        radial-gradient(circle at 16% 78%, var(--glow-4) 0%, transparent 45%),
+        radial-gradient(circle at 52% 96%, var(--glow-5) 0%, transparent 42%);
       overflow-x: hidden;
       min-height: 100vh;
+      padding-bottom: 88px;
     }
 
-    /* Typography */
     h1, h2, h3, .serif {
       font-family: var(--font-serif);
-      font-weight: 500;
-      color: var(--charcoal);
+      font-weight: 600;
+      color: var(--ink);
       line-height: 1.15;
     }
 
     .eyebrow {
       font-size: 0.75rem;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.22em;
-      color: var(--sage-dark);
+      color: var(--coral-deep);
       display: block;
     }
 
@@ -79,10 +99,10 @@
       position: sticky;
       top: 0;
       z-index: 40;
-      background: rgba(250, 247, 242, 0.88);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-soft);
+      background: rgba(255, 249, 242, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-joy);
     }
 
     .topbar-inner {
@@ -97,9 +117,13 @@
 
     .brand-tag {
       font-family: var(--font-serif);
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       font-style: italic;
-      color: var(--charcoal);
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--coral-deep), var(--sage-deep), var(--sky));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       text-decoration: none;
     }
 
@@ -111,75 +135,110 @@
 
     .nav-links a {
       font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--charcoal-soft);
+      font-weight: 600;
+      color: var(--ink-soft);
       text-decoration: none;
       transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: var(--sage-dark);
+      color: var(--coral-deep);
     }
 
-    /* Floating Botanical Accents */
-    .ambient-wrap {
+    /* Scroll Baby Footsteps + Twinkle Layer */
+    .footstep-trail {
       position: fixed;
       inset: 0;
       pointer-events: none;
-      z-index: 0;
+      z-index: 2;
       overflow: hidden;
     }
 
-    .float-leaf {
+    .baby-step {
       position: absolute;
-      opacity: 0.35;
-      animation: gentleFloat 9s ease-in-out infinite;
+      left: var(--x, 50%);
+      top: var(--y, 50%);
+      width: 30px;
+      height: 38px;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.45) rotate(var(--rot, 0deg));
+      transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1.35, 0.36, 1);
+      filter: drop-shadow(0 4px 10px rgba(232, 122, 93, 0.28));
     }
 
-    .float-leaf.one {
-      top: 90px;
-      left: -18px;
-      width: 130px;
+    .baby-step.active {
+      opacity: 0.94;
+      transform: translate(-50%, -50%) scale(1) rotate(var(--rot, 0deg));
     }
 
-    .float-leaf.two {
-      top: 44%;
-      right: -20px;
-      width: 140px;
-      animation-delay: 2.5s;
+    .baby-step.twinkle::before,
+    .baby-step.twinkle::after {
+      content: "✦";
+      position: absolute;
+      font-size: 14px;
+      color: var(--marigold);
+      text-shadow: 0 0 8px rgba(242, 177, 56, 0.8);
+      pointer-events: none;
+      animation: twinkleSparkle 1.35s ease-out forwards;
     }
 
-    @keyframes gentleFloat {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(2.5deg); }
+    .baby-step.twinkle::before {
+      top: -11px;
+      right: -11px;
+    }
+
+    .baby-step.twinkle::after {
+      content: "✧";
+      bottom: -9px;
+      left: -12px;
+      color: var(--lavender);
+      animation-delay: 0.15s;
+    }
+
+    @keyframes twinkleSparkle {
+      0% {
+        opacity: 0;
+        transform: scale(0.2) rotate(0deg);
+      }
+      45% {
+        opacity: 1;
+        transform: scale(1.4) rotate(45deg);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0.6) translateY(-10px) rotate(90deg);
+      }
     }
 
     /* Hero Section */
     .hero {
       position: relative;
-      z-index: 1;
+      z-index: 3;
       text-align: center;
-      padding: 64px 20px 72px;
+      padding: 64px 20px 68px;
     }
 
     .crest {
-      width: 96px;
-      height: 96px;
+      width: 100px;
+      height: 100px;
       margin: 0 auto 20px;
-      color: var(--sage-dark);
     }
 
     .hero-title {
-      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      font-size: clamp(2.7rem, 6.2vw, 4.5rem);
       margin: 12px 0 8px;
       letter-spacing: -0.01em;
+      background: linear-gradient(120deg, var(--ink) 10%, var(--coral-deep) 55%, var(--sage-deep) 95%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .hero-subtitle {
       font-family: var(--font-serif);
       font-style: italic;
-      font-size: clamp(1.35rem, 3vw, 1.85rem);
-      color: var(--terracotta-dark);
+      font-size: clamp(1.4rem, 3.2vw, 1.9rem);
+      color: var(--sage-deep);
       margin-bottom: 24px;
     }
 
@@ -189,56 +248,71 @@
       align-items: center;
       justify-content: center;
       gap: 10px 16px;
-      background: var(--bg-ivory);
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-card);
+      background: var(--bg-card);
+      border: 2px solid rgba(242, 177, 56, 0.45);
+      box-shadow: var(--shadow-joy);
       border-radius: 999px;
-      padding: 10px 24px;
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--charcoal);
+      padding: 10px 26px;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--ink);
       margin-bottom: 36px;
     }
 
     .dot-sep {
-      width: 5px;
-      height: 5px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: var(--terracotta);
+      background: linear-gradient(135deg, var(--coral), var(--marigold));
     }
 
-    /* Countdown */
+    /* Countdown with Rainbow Accents */
     .countdown-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(68px, 108px));
+      grid-template-columns: repeat(4, minmax(68px, 112px));
       justify-content: center;
-      gap: 12px;
+      gap: 14px;
       margin: 0 auto 32px;
     }
 
     .count-box {
-      background: var(--bg-ivory);
-      border: 1px solid var(--border-soft);
-      border-radius: 18px;
+      background: var(--bg-card);
+      border-radius: 20px;
       padding: 16px 8px;
-      box-shadow: var(--shadow-card);
+      box-shadow: var(--shadow-joy);
+      border-top: 4px solid var(--coral);
+      border-left: 1px solid rgba(0, 0, 0, 0.05);
+      border-right: 1px solid rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .count-box:nth-child(2) {
+      border-top-color: var(--marigold);
+    }
+
+    .count-box:nth-child(3) {
+      border-top-color: var(--sage);
+    }
+
+    .count-box:nth-child(4) {
+      border-top-color: var(--sky);
     }
 
     .count-num {
       font-family: var(--font-serif);
-      font-size: clamp(1.85rem, 4vw, 2.5rem);
+      font-size: clamp(1.9rem, 4vw, 2.55rem);
       font-weight: 600;
-      color: var(--charcoal);
+      color: var(--ink);
       line-height: 1;
       display: block;
     }
 
     .count-label {
       font-size: 0.7rem;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      color: var(--charcoal-soft);
+      color: var(--ink-soft);
       margin-top: 6px;
       display: block;
     }
@@ -250,13 +324,13 @@
       gap: 12px;
     }
 
-    /* Buttons */
+    /* Colorful Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 12px 22px;
+      padding: 12px 24px;
       border-radius: 999px;
       font-family: var(--font-sans);
       font-size: 0.9rem;
@@ -268,58 +342,68 @@
     }
 
     .btn:hover {
-      transform: translateY(-1px);
+      transform: translateY(-2px);
     }
 
     .btn-primary {
-      background: var(--sage-dark);
+      background: linear-gradient(135deg, var(--sage), var(--sage-deep));
       color: #FFFFFF;
-      box-shadow: 0 8px 20px rgba(110, 138, 120, 0.25);
+      box-shadow: 0 8px 20px rgba(62, 123, 92, 0.25);
     }
 
     .btn-primary:hover {
-      background: #5D7867;
+      filter: brightness(1.04);
     }
 
     .btn-secondary {
-      background: var(--bg-ivory);
-      color: var(--charcoal);
-      border-color: var(--border-soft);
+      background: #FFFFFF;
+      color: var(--ink);
+      border-color: rgba(90, 159, 212, 0.35);
+      box-shadow: 0 6px 16px rgba(90, 159, 212, 0.12);
     }
 
     .btn-secondary:hover {
-      background: var(--sage-light);
+      background: var(--sky-soft);
     }
 
-    .btn-terracotta {
-      background: var(--terracotta);
+    .btn-coral {
+      background: linear-gradient(135deg, var(--coral), var(--coral-deep));
       color: #FFFFFF;
+      box-shadow: 0 8px 18px rgba(232, 122, 93, 0.25);
     }
 
-    .btn-terracotta:hover {
-      background: var(--terracotta-dark);
+    .btn-coral:hover {
+      filter: brightness(1.04);
     }
 
-    /* Section Divider */
+    .btn-sm {
+      padding: 9px 16px;
+      font-size: 0.84rem;
+    }
+
+    /* Divider */
     .divider {
+      position: relative;
+      z-index: 3;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 14px;
-      margin: 12px auto 56px;
-      color: var(--sage);
+      margin: 8px auto 52px;
+      color: var(--coral);
     }
 
     .divider-line {
-      height: 1px;
+      height: 2px;
       width: 84px;
-      background: var(--border-soft);
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, var(--marigold), var(--sage), transparent);
     }
 
-    /* Section Base */
+    /* Sections */
     section {
       position: relative;
-      z-index: 1;
+      z-index: 3;
       padding: 24px 0 64px;
     }
 
@@ -330,43 +414,44 @@
     }
 
     .section-title {
-      font-size: clamp(2rem, 4.5vw, 2.9rem);
+      font-size: clamp(2.1rem, 4.5vw, 3rem);
       margin-top: 8px;
     }
 
     /* Story Card */
     .story-card {
-      background: var(--bg-ivory);
-      border: 1px solid var(--border-soft);
+      background: var(--bg-card);
+      border: 1px solid rgba(232, 122, 93, 0.22);
+      border-top: 4px solid var(--marigold);
       border-radius: 28px;
       padding: clamp(28px, 5vw, 48px);
-      box-shadow: var(--shadow-card);
+      box-shadow: var(--shadow-joy);
       max-width: 780px;
       margin: 0 auto 36px;
     }
 
     .story-text {
-      font-size: 1.05rem;
-      color: var(--charcoal-soft);
-      line-height: 1.8;
+      font-size: 1.06rem;
+      color: var(--ink-soft);
+      line-height: 1.82;
     }
 
     .story-text::first-letter {
       font-family: var(--font-serif);
-      font-size: 3.4rem;
+      font-size: 3.5rem;
       float: left;
       line-height: 0.85;
       padding-right: 12px;
       padding-top: 4px;
-      color: var(--terracotta-dark);
+      color: var(--coral-deep);
     }
 
     .story-signoff {
       margin-top: 22px;
       font-family: var(--font-serif);
       font-style: italic;
-      font-size: 1.35rem;
-      color: var(--charcoal);
+      font-size: 1.4rem;
+      color: var(--sage-deep);
       text-align: right;
     }
 
@@ -377,11 +462,11 @@
     }
 
     .photo-card {
-      background: var(--bg-ivory);
-      border: 1px solid var(--border-soft);
-      border-radius: 24px;
+      background: var(--bg-card);
+      border: 2px solid rgba(92, 154, 122, 0.26);
+      border-radius: 26px;
       padding: 12px 12px 18px;
-      box-shadow: var(--shadow-card);
+      box-shadow: var(--shadow-joy);
       text-align: center;
     }
 
@@ -390,7 +475,7 @@
       aspect-ratio: 4 / 3;
       border-radius: 18px;
       overflow: hidden;
-      background: var(--sage-light);
+      background: var(--sage-soft);
     }
 
     .photo-frame img {
@@ -404,11 +489,11 @@
       margin-top: 12px;
       font-family: var(--font-serif);
       font-style: italic;
-      font-size: 1.15rem;
-      color: var(--charcoal-soft);
+      font-size: 1.2rem;
+      color: var(--ink-soft);
     }
 
-    /* Event Details Grid */
+    /* Details Grid */
     .details-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -422,21 +507,29 @@
     }
 
     .detail-card {
-      background: var(--bg-ivory);
-      border: 1px solid var(--border-soft);
+      background: var(--bg-card);
       border-radius: 26px;
       padding: 32px 28px;
-      box-shadow: var(--shadow-card);
+      box-shadow: var(--shadow-joy);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 24px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .detail-card.card-time {
+      border-top: 4px solid var(--sage);
+    }
+
+    .detail-card.card-venue {
+      border-top: 4px solid var(--coral);
     }
 
     .icon-badge {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -444,53 +537,48 @@
     }
 
     .icon-badge.sage {
-      background: var(--sage-light);
-      color: var(--sage-dark);
+      background: var(--sage-soft);
+      color: var(--sage-deep);
     }
 
-    .icon-badge.terracotta {
-      background: var(--terracotta-light);
-      color: var(--terracotta-dark);
+    .icon-badge.coral {
+      background: var(--coral-soft);
+      color: var(--coral-deep);
     }
 
     .detail-heading {
-      font-size: 1.65rem;
+      font-size: 1.7rem;
       margin-bottom: 10px;
     }
 
     .detail-primary {
       font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--charcoal);
+      font-weight: 700;
+      color: var(--ink);
       margin-bottom: 4px;
     }
 
     .detail-secondary {
       font-size: 0.95rem;
-      color: var(--charcoal-soft);
+      color: var(--ink-soft);
     }
 
     .card-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      padding-top: 8px;
-      border-top: 1px solid var(--border-soft);
+      padding-top: 14px;
+      border-top: 1px solid rgba(0, 0, 0, 0.07);
     }
 
-    .btn-sm {
-      padding: 9px 16px;
-      font-size: 0.84rem;
-    }
-
-    /* Stylized Map Card */
+    /* Actual Map Section */
     .map-preview {
       margin-top: 24px;
-      background: var(--bg-ivory);
-      border: 1px solid var(--border-soft);
+      background: var(--bg-card);
+      border: 2px solid rgba(90, 159, 212, 0.28);
       border-radius: 26px;
       padding: 24px;
-      box-shadow: var(--shadow-card);
+      box-shadow: var(--shadow-joy);
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -500,12 +588,12 @@
 
     .map-visual {
       flex: 1 1 260px;
-      min-height: 130px;
+      min-height: 144px;
       border-radius: 18px;
-      background-color: var(--sage-light);
+      background-color: var(--sky-soft);
       background-image:
-        linear-gradient(rgba(143, 169, 152, 0.22) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(143, 169, 152, 0.22) 1px, transparent 1px);
+        linear-gradient(rgba(90, 159, 212, 0.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(90, 159, 212, 0.22) 1px, transparent 1px);
       background-size: 24px 24px;
       display: flex;
       flex-direction: column;
@@ -513,19 +601,18 @@
       justify-content: center;
       padding: 18px;
       text-align: center;
-      position: relative;
     }
 
     .map-pin {
-      width: 38px;
-      height: 38px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background: var(--terracotta);
+      background: linear-gradient(135deg, var(--coral), var(--marigold));
       color: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 16px rgba(217, 155, 130, 0.45);
+      box-shadow: 0 8px 18px rgba(232, 122, 93, 0.35);
       margin-bottom: 8px;
     }
 
@@ -533,36 +620,235 @@
       flex: 1 1 280px;
     }
 
+    /* Sticky Bottom Map Bar (removed once #location reaches view) */
+    .sticky-map-bar {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 14px;
+      z-index: 45;
+      max-width: 760px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 2px solid rgba(232, 122, 93, 0.32);
+      border-radius: 20px;
+      padding: 10px 14px;
+      box-shadow: 0 14px 34px rgba(37, 41, 50, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: transform 0.28s ease, opacity 0.28s ease;
+    }
+
+    .sticky-map-bar.unpinned {
+      opacity: 0;
+      transform: translateY(120%);
+      pointer-events: none;
+    }
+
+    .sticky-map-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .sticky-map-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: var(--coral-soft);
+      color: var(--coral-deep);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sticky-map-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sticky-map-sub {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sticky-map-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
     /* Footer */
     footer {
       position: relative;
-      z-index: 1;
+      z-index: 3;
       text-align: center;
-      padding: 40px 20px 72px;
-      border-top: 1px solid var(--border-soft);
-      margin-top: 20px;
+      padding: 40px 20px 64px;
+      border-top: 1px solid var(--border-joy);
+      margin-top: 16px;
+      background: linear-gradient(180deg, transparent, rgba(255, 244, 214, 0.45));
     }
 
     .footer-names {
       font-family: var(--font-serif);
-      font-size: 1.75rem;
+      font-size: 1.85rem;
       font-style: italic;
+      color: var(--coral-deep);
       margin-bottom: 8px;
     }
 
     .footer-note {
       font-size: 0.9rem;
-      color: var(--charcoal-soft);
+      color: var(--ink-soft);
       margin-bottom: 22px;
     }
 
-    /* Toast Notification */
+    /* Jungle theme: animals */
+    .jungle-animal {
+      position: absolute;
+      z-index: 0;
+      font-size: 42px;
+      line-height: 1;
+      pointer-events: none;
+      filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.14));
+      animation: animalBob 4.2s ease-in-out infinite;
+      animation-delay: var(--d, 0s);
+    }
+
+    .jungle-animal.a1 { top: 9%; left: 7%; }
+    .jungle-animal.a2 { top: 14%; right: 8%; }
+    .jungle-animal.a3 { top: 52%; left: 3%; }
+    .jungle-animal.a4 { top: 60%; right: 4%; }
+    .jungle-animal.a5 { bottom: 13%; left: 12%; font-size: 36px; }
+
+
+    @keyframes animalBob {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-16px) rotate(5deg); }
+    }
+
+    .jungle-strip {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: -28px auto 10px;
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    .jungle-strip span {
+      display: inline-block;
+      animation: hop 1.8s ease-in-out infinite;
+      animation-delay: calc(var(--i, 0) * 0.16s);
+    }
+
+    @keyframes hop {
+      0%, 55%, 100% { transform: translateY(0); }
+      25% { transform: translateY(-14px); }
+    }
+
+    @media (max-width: 520px) {
+      .jungle-animal {
+        font-size: 30px;
+      }
+
+      .jungle-animal.a5 {
+        font-size: 26px;
+      }
+    }
+
+    /* Jungle theme: butterflies drifting across the page */
+    .butterfly-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 201;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .butterfly {
+      position: absolute;
+      left: 0;
+      top: var(--top, 50%);
+      font-size: var(--size, 32px);
+      line-height: 1;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.18));
+      animation: flutterAcross var(--dur, 18s) linear infinite;
+      animation-delay: var(--delay, 0s);
+      will-change: transform;
+    }
+
+    .butterfly.rev {
+      animation-direction: reverse;
+    }
+
+    .bf-wings {
+      display: inline-block;
+      transform-origin: 50% 50%;
+      animation: flap 0.45s ease-in-out infinite alternate;
+    }
+
+    /* Wings open and close */
+    @keyframes flap {
+      from { transform: scaleX(1); }
+      to { transform: scaleX(0.45); }
+    }
+
+    /* Drift in from off-screen left to off-screen right, with a gentle up-and-down wander */
+    @keyframes flutterAcross {
+      0% { transform: translate(-12vw, 0); }
+      25% { transform: translate(28vw, -7vh); }
+      50% { transform: translate(60vw, 4vh); }
+      75% { transform: translate(90vw, -5vh); }
+      100% { transform: translate(112vw, 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .jungle-animal,
+      .jungle-strip span {
+        animation: none !important;
+      }
+
+      .butterfly-layer {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+    }
+
+    /* Toast */
     .toast {
       position: fixed;
-      bottom: 24px;
+      bottom: 84px;
       left: 50%;
       transform: translateX(-50%) translateY(20px);
-      background: var(--charcoal);
+      background: var(--ink);
       color: #FFFFFF;
       padding: 10px 20px;
       border-radius: 999px;
@@ -572,7 +858,6 @@
       pointer-events: none;
       transition: opacity 0.25s ease, transform 0.25s ease;
       z-index: 100;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
     }
 
     .toast.show {
@@ -580,51 +865,451 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    /* Scroll Reveal */
-    .reveal {
+    @media (max-width: 520px) {
+      .sticky-map-bar {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        padding: 9px 11px;
+      }
+      .sticky-map-sub {
+        display: none;
+      }
+    }
+    /* ===== Envelope Intro Gate ===== */
+    body.gate-locked {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .envelope-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow: hidden;
+      background-color: var(--bg-warm);
+      background-image:
+        radial-gradient(circle at 50% 40%, var(--glow-1) 0%, transparent 60%),
+        radial-gradient(circle at 20% 80%, var(--glow-2) 0%, transparent 45%),
+        radial-gradient(circle at 80% 20%, var(--glow-3) 0%, transparent 45%);
+      transition: opacity 0.9s ease, visibility 0.9s ease;
+    }
+
+    .envelope-gate.opened {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      visibility: hidden;
+      pointer-events: none;
     }
 
-    .reveal.visible {
+    /* Drifting colour blobs */
+    .gate-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(42px);
+      opacity: 0.55;
+      pointer-events: none;
+      animation: blobFloat 9s ease-in-out infinite;
+    }
+
+    .gate-blob.b1 { width: 260px; height: 260px; background: var(--blob-1); top: -70px; left: -60px; }
+    .gate-blob.b2 { width: 320px; height: 320px; background: var(--blob-2); bottom: -90px; right: -90px; animation-delay: -3s; }
+    .gate-blob.b3 { width: 200px; height: 200px; background: var(--blob-3); top: 40%; right: 8%; animation-delay: -6s; }
+
+    @keyframes blobFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -24px) scale(1.08); }
+    }
+
+    .envelope-wrap {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .envelope-gate.opening .envelope-wrap {
+      transform: translateY(-16px) scale(1.04);
+    }
+
+    .envelope-hint {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(1.2rem, 3vw, 1.55rem);
+      color: var(--sage-deep);
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: revealUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+    }
+
+    @keyframes revealUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    /* Stage: gentle float + glowing halo behind the envelope */
+    .envelope-stage {
+      position: relative;
+      width: min(340px, 84vw);
+      margin: 0 auto;
+      animation: envBob 3.6s ease-in-out infinite;
+    }
+
+    @keyframes envBob {
+      0%, 100% { transform: translateY(0) rotate(-0.4deg); }
+      50% { transform: translateY(-12px) rotate(0.4deg); }
+    }
+
+    .envelope-halo {
+      position: absolute;
+      inset: -46px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--halo-1) 0%, var(--halo-2) 45%, transparent 68%);
+      animation: haloPulse 2.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes haloPulse {
+      0%, 100% { opacity: 0.5; transform: scale(0.94); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+
+    /* The envelope itself */
+    .envelope {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 236px;
+      margin: 0;
+      padding: 0;
+      border: 1px solid var(--border-joy);
+      border-radius: 16px;
+      background: linear-gradient(160deg, #FFFFFF 0%, var(--bg-warm) 100%);
+      box-shadow: 0 26px 56px rgba(37, 41, 50, 0.2), inset 0 0 0 6px rgba(255, 255, 255, 0.6);
+      cursor: pointer;
+      font: inherit;
+      color: var(--ink);
+      perspective: 900px;
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    }
+
+    .envelope:hover:not(:disabled) {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 36px 66px rgba(37, 41, 50, 0.24), inset 0 0 0 6px rgba(255, 255, 255, 0.6);
+    }
+
+    .envelope:focus-visible {
+      outline: 3px solid var(--sky);
+      outline-offset: 5px;
+    }
+
+    .envelope:disabled {
+      cursor: default;
+    }
+
+    .envelope.shake {
+      animation: envShake 0.45s ease;
+    }
+
+    @keyframes envShake {
+      0%, 100% { transform: none; }
+      20% { transform: rotate(-4deg) translateX(-3px); }
+      40% { transform: rotate(4deg) translateX(3px); }
+      60% { transform: rotate(-3deg); }
+      80% { transform: rotate(2deg); }
+    }
+
+    /* Letter sliding out of the envelope */
+    .envelope-letter {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      top: 18px;
+      bottom: 18px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      padding: 16px 12px;
+      background: #FFFFFF;
+      border-radius: 12px;
+      border: 1px solid rgba(242, 177, 56, 0.35);
+      box-shadow: 0 8px 22px rgba(37, 41, 50, 0.12);
+      text-align: center;
+      transform: translateY(40px);
+      opacity: 0;
+      transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.75s, opacity 0.5s ease 0.75s;
+    }
+
+    .envelope.open .envelope-letter {
+      transform: translateY(-158px) rotate(-1.5deg);
       opacity: 1;
-      transform: translateY(0);
     }
 
-    @media (max-width: 480px) {
-      .nav-links {
-        gap: 12px;
+    .letter-eyebrow {
+      font-size: 0.66rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--coral-deep);
+    }
+
+    .letter-names {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.15;
+    }
+
+    .letter-line {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--sage-deep);
+    }
+
+    .letter-line.sm {
+      font-size: 0.74rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+    }
+
+    /* Envelope front: V-shaped fold lines */
+    .envelope::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background:
+        linear-gradient(to bottom right, transparent 49.2%, rgba(232, 122, 93, 0.18) 50%, transparent 50.8%) 0 0 / 100% 100% no-repeat,
+        linear-gradient(to bottom left, transparent 49.2%, rgba(232, 122, 93, 0.18) 50%, transparent 50.8%) 0 0 / 100% 100% no-repeat;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Flap */
+    .envelope::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      height: 54%;
+      background: linear-gradient(180deg, #F59A80 0%, var(--coral-soft) 100%);
+      border-radius: 16px 16px 0 0;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      transform-origin: top center;
+      transition: transform 0.9s cubic-bezier(0.45, 0, 0.2, 1) 0.1s, z-index 0s linear 0.5s;
+      z-index: 3;
+    }
+
+    .envelope.open::before {
+      transform: rotateX(180deg);
+      z-index: 0;
+    }
+
+    /* Wax seal */
+    .envelope-seal {
+      position: absolute;
+      top: 54%;
+      left: 50%;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle at 35% 30%, #F08C71, var(--coral-deep));
+      color: #FFFFFF;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.05rem;
+      z-index: 4;
+      animation: sealPulse 2.2s ease-in-out infinite;
+      transition: opacity 0.35s ease, transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+    }
+
+    .envelope.open .envelope-seal {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(1.5) rotate(20deg);
+      animation: none;
+    }
+
+    @keyframes sealPulse {
+      0%, 100% { box-shadow: 0 6px 14px rgba(204, 91, 62, 0.35), 0 0 0 0 rgba(232, 122, 93, 0.45); }
+      50% { box-shadow: 0 6px 14px rgba(204, 91, 62, 0.35), 0 0 0 12px rgba(232, 122, 93, 0); }
+    }
+
+    /* Shimmering hint label */
+    .envelope-label {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 22px;
+      z-index: 2;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      background: linear-gradient(90deg, var(--ink-soft) 30%, var(--coral-deep) 50%, var(--ink-soft) 70%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 2.6s linear infinite;
+      transition: opacity 0.3s ease;
+    }
+
+    .envelope.open .envelope-label {
+      opacity: 0;
+      animation: none;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% center; }
+      100% { background-position: -200% center; }
+    }
+
+    /* Sparkles burst */
+    .spark {
+      position: fixed;
+      z-index: 210;
+      pointer-events: none;
+      color: var(--c, var(--marigold));
+      font-size: var(--s, 16px);
+      text-shadow: 0 0 10px currentColor;
+      transform: translate(-50%, -50%);
+      animation: sparkBurst 1.3s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+    }
+
+    @keyframes sparkBurst {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.3) rotate(0deg); }
+      15% { opacity: 1; }
+      100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1) rotate(200deg);
       }
-      .countdown-grid {
-        gap: 8px;
+    }
+
+    /* Skip control */
+    .gate-skip {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      z-index: 2;
+      background: none;
+      border: 0;
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+      cursor: pointer;
+      padding: 8px 10px;
+      border-radius: 999px;
+      transition: color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .gate-skip:hover {
+      color: var(--coral-deep);
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .envelope-gate.opening .gate-skip {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Staggered reveal of the hero once the envelope opens */
+    body:not(.revealed) .hero .container > * {
+      opacity: 0;
+    }
+
+    body.revealed .hero .container > * {
+      animation: revealUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    body.revealed .hero .container > *:nth-child(1) { animation-delay: 0.1s; }
+    body.revealed .hero .container > *:nth-child(2) { animation-delay: 0.2s; }
+    body.revealed .hero .container > *:nth-child(3) { animation-delay: 0.3s; }
+    body.revealed .hero .container > *:nth-child(4) { animation-delay: 0.4s; }
+    body.revealed .hero .container > *:nth-child(5) { animation-delay: 0.5s; }
+    body.revealed .hero .container > *:nth-child(6) { animation-delay: 0.6s; }
+    body.revealed .hero .container > *:nth-child(7) { animation-delay: 0.7s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .gate-blob,
+      .envelope-stage,
+      .envelope-halo,
+      .envelope-hint,
+      .envelope-seal,
+      .envelope-label,
+      .envelope.shake,
+      .envelope-letter,
+      .envelope-wrap,
+      .envelope::before,
+      .envelope-gate,
+      body.revealed .hero .container > * {
+        animation: none !important;
+        transition-duration: 0.01s !important;
       }
-      .hero {
-        padding-top: 44px;
+
+      .envelope-hint,
+      body:not(.revealed) .hero .container > * {
+        opacity: 1 !important;
+      }
+
+      .spark {
+        display: none;
       }
     }
   </style>
 </head>
-<body>
+<body class="gate-locked">
 
-  <!-- Ambient Floating Botanical Leaves -->
-  <div class="ambient-wrap" aria-hidden="true">
-    <svg class="float-leaf one" viewBox="0 0 120 180" fill="none">
-      <path d="M20 170C35 110 60 60 105 15" stroke="#8FA998" stroke-width="2" stroke-linecap="round"/>
-      <ellipse cx="48" cy="118" rx="18" ry="10" transform="rotate(-32 48 118)" fill="#8FA998"/>
-      <ellipse cx="78" cy="96" rx="17" ry="9" transform="rotate(24 78 96)" fill="#8FA998"/>
-      <ellipse cx="64" cy="68" rx="16" ry="9" transform="rotate(-28 64 68)" fill="#8FA998"/>
-      <ellipse cx="92" cy="48" rx="14" ry="8" transform="rotate(20 92 48)" fill="#8FA998"/>
-    </svg>
-    <svg class="float-leaf two" viewBox="0 0 120 180" fill="none">
-      <path d="M100 170C85 110 60 60 15 15" stroke="#D99B82" stroke-width="2" stroke-linecap="round"/>
-      <ellipse cx="72" cy="118" rx="18" ry="10" transform="rotate(32 72 118)" fill="#D99B82"/>
-      <ellipse cx="42" cy="96" rx="17" ry="9" transform="rotate(-24 42 96)" fill="#D99B82"/>
-      <ellipse cx="56" cy="68" rx="16" ry="9" transform="rotate(28 56 68)" fill="#D99B82"/>
-    </svg>
+  <!-- Envelope intro: tap the sealed envelope to open the invitation -->
+  <div class="envelope-gate" id="envelopeGate">
+    <span class="gate-blob b1" aria-hidden="true"></span>
+    <span class="gate-blob b2" aria-hidden="true"></span>
+    <span class="gate-blob b3" aria-hidden="true"></span>
+
+    <!-- Jungle theme only: animals drifting around the envelope -->
+    <span class="jungle-animal a1" style="--d: 0s" aria-hidden="true">🦁</span>
+    <span class="jungle-animal a3" style="--d: -2.5s" aria-hidden="true">🦜</span>
+    <span class="jungle-animal a4" style="--d: -0.8s" aria-hidden="true">🦒</span>
+    <span class="jungle-animal a5" style="--d: -3s" aria-hidden="true">🐢</span>
+
+    <div class="envelope-wrap">
+      <p class="envelope-hint">You've received a little invitation</p>
+      <div class="envelope-stage">
+        <span class="envelope-halo" aria-hidden="true"></span>
+        <button type="button" class="envelope" id="envelopeBtn" aria-label="Open the invitation envelope">
+          <span class="envelope-letter" aria-hidden="true">
+            <span class="letter-eyebrow">Save the date</span>
+            <span class="letter-names">Shalini &amp; Madhusudan</span>
+            <span class="letter-line">Sunday, Dec 13, 2026</span>
+            <span class="letter-line sm">10:00 AM – 1:00 PM · Nagarbhavi, Bengaluru</span>
+          </span>
+          <span class="envelope-seal" aria-hidden="true">S&amp;M</span>
+          <span class="envelope-label">Tap to open</span>
+        </button>
+      </div>
+    </div>
+
+    <button type="button" class="gate-skip" id="gateSkip">Skip intro</button>
   </div>
 
-  <!-- Minimal Sticky Navigation -->
+  <!-- Scroll-Driven Baby Footsteps + Twinkle Trail -->
+  <div class="footstep-trail" id="footstepTrail" aria-hidden="true"></div>
+
+  <!-- Minimal Sticky Top Bar -->
   <header class="topbar">
     <div class="topbar-inner">
       <a href="#top" class="brand-tag">Shalini & Madhusudan</a>
@@ -641,14 +1326,14 @@
     <section class="hero">
       <div class="container">
         <svg class="crest" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.55"/>
-          <path d="M50 82C33 68 25 48 34 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          <path d="M50 82C67 68 75 48 66 24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          <ellipse cx="32" cy="56" rx="9" ry="5" transform="rotate(-30 32 56)" fill="#8FA998" opacity="0.75"/>
-          <ellipse cx="68" cy="56" rx="9" ry="5" transform="rotate(30 68 56)" fill="#8FA998" opacity="0.75"/>
-          <ellipse cx="30" cy="38" rx="8" ry="4.5" transform="rotate(-18 30 38)" fill="#8FA998" opacity="0.85"/>
-          <ellipse cx="70" cy="38" rx="8" ry="4.5" transform="rotate(18 70 38)" fill="#8FA998" opacity="0.85"/>
-          <circle cx="50" cy="21" r="3.5" fill="#D99B82"/>
+          <circle cx="50" cy="50" r="42" stroke-width="1.4" stroke-dasharray="3 3" opacity="0.65" style="stroke: var(--sky)"/>
+          <path d="M50 82C33 68 25 48 34 24" stroke-width="1.8" stroke-linecap="round" style="stroke: var(--sage-deep)"/>
+          <path d="M50 82C67 68 75 48 66 24" stroke-width="1.8" stroke-linecap="round" style="stroke: var(--sage-deep)"/>
+          <ellipse cx="32" cy="56" rx="9" ry="5" transform="rotate(-30 32 56)" opacity="0.9" style="fill: var(--lavender)"/>
+          <ellipse cx="68" cy="56" rx="9" ry="5" transform="rotate(30 68 56)" opacity="0.9" style="fill: var(--lavender)"/>
+          <ellipse cx="30" cy="38" rx="8" ry="4.5" transform="rotate(-18 30 38)" opacity="0.9" style="fill: var(--marigold)"/>
+          <ellipse cx="70" cy="38" rx="8" ry="4.5" transform="rotate(18 70 38)" opacity="0.9" style="fill: var(--coral)"/>
+          <circle cx="50" cy="21" r="4.5" style="fill: var(--coral-deep)"/>
         </svg>
 
         <span class="eyebrow">A Celebration of Love & New Beginnings</span>
@@ -661,7 +1346,6 @@
           <span>10:00 AM – 1:00 PM</span>
         </div>
 
-        <!-- Live Countdown Timer -->
         <div class="countdown-grid" role="timer" aria-label="Countdown to the baby shower">
           <div class="count-box">
             <span class="count-num" id="cdDays">--</span>
@@ -683,7 +1367,6 @@
 
         <div class="hero-actions">
           <button type="button" class="btn btn-primary" id="heroCalendarBtn">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             Save the Date (.ics)
           </button>
           <a href="#details" class="btn btn-secondary">Event Details</a>
@@ -691,14 +1374,23 @@
       </div>
     </section>
 
-    <div class="divider" aria-hidden="true">
+    <!-- Jungle theme only: a little safari parade -->
+  <div class="jungle-strip" aria-hidden="true">
+    <span style="--i: 0">🐘</span>
+    <span style="--i: 1">🦒</span>
+    <span style="--i: 2">🦁</span>
+    <span style="--i: 4">🦜</span>
+    <span style="--i: 5">🐢</span>
+  </div>
+
+  <div class="divider" aria-hidden="true">
       <span class="divider-line"></span>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2C7 7 5 12 12 22C19 12 17 7 12 2Z"/></svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z"/></svg>
       <span class="divider-line"></span>
     </div>
 
-    <!-- 2. Our Story & Featured Moment / Bump & Beyond -->
-    <section id="story" class="reveal">
+    <!-- 2. Story & Single Landscape Photo -->
+    <section id="story">
       <div class="container">
         <div class="section-header">
           <span class="eyebrow">Our Journey</span>
@@ -710,8 +1402,7 @@
           <p class="story-signoff">With love, Shalini & Madhusudan</p>
         </div>
 
-        <!-- Single Landscape Photo -->
-        <div class="photo-showcase" aria-label="Featured moment photo">
+        <div class="photo-showcase">
           <figure class="photo-card">
             <div class="photo-frame">
               <img src="image1.jpg" alt="Soft sunlit nursery details" />
@@ -722,8 +1413,8 @@
       </div>
     </section>
 
-    <!-- 3. Event Details & Interactive Map -->
-    <section id="details" class="reveal">
+    <!-- 3. Celebration Details & Actual Map Point -->
+    <section id="details">
       <div class="container">
         <div class="section-header">
           <span class="eyebrow">When & Where</span>
@@ -731,17 +1422,15 @@
         </div>
 
         <div class="details-grid">
-          <!-- Date & Time Card -->
-          <article class="detail-card">
+          <article class="detail-card card-time">
             <div>
               <div class="icon-badge sage" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </div>
               <h3 class="detail-heading">Date & Time</h3>
               <p class="detail-primary">Sunday, Dec 13, 2026</p>
               <p class="detail-secondary">10:00 AM – 1:00 PM</p>
             </div>
-
             <div class="card-actions">
               <button type="button" class="btn btn-primary btn-sm" id="cardCalendarBtn">
                 Download .ics Calendar
@@ -749,19 +1438,17 @@
             </div>
           </article>
 
-          <!-- Venue Card -->
-          <article class="detail-card" id="location">
+          <article class="detail-card card-venue">
             <div>
-              <div class="icon-badge terracotta" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div class="icon-badge coral" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </div>
               <h3 class="detail-heading">The Venue</h3>
               <p class="detail-primary">Neralu Courtyard</p>
               <p class="detail-secondary">1st Main Rd, off Nagarabhavi Main Road, SVG Nagar, Govindaraja Nagar Ward, Mudalapalya, Nagarbhavi, Bengaluru, Karnataka 560072</p>
             </div>
-
             <div class="card-actions">
-              <a class="btn btn-terracotta btn-sm" href="https://www.google.com/maps/search/?api=1&query=Neralu%20Courtyard%2C%201st%20Main%20Rd%2C%20off%20Nagarabhavi%20Main%20Road%2C%20SVG%20Nagar%2C%20Govindaraja%20Nagar%20Ward%2C%20Mudalapalya%2C%20Nagarbhavi%2C%20Bengaluru%2C%20Karnataka%20560072" target="_blank" rel="noopener noreferrer">
+              <a class="btn btn-coral btn-sm" href="https://www.google.com/maps/search/?api=1&query=Neralu%20Courtyard%2C%201st%20Main%20Rd%2C%20off%20Nagarabhavi%20Main%20Road%2C%20SVG%20Nagar%2C%20Govindaraja%20Nagar%20Ward%2C%20Mudalapalya%2C%20Nagarbhavi%2C%20Bengaluru%2C%20Karnataka%20560072" target="_blank" rel="noopener noreferrer">
                 Open in Google Maps
               </a>
               <button type="button" class="btn btn-secondary btn-sm" id="copyAddressBtn">
@@ -771,19 +1458,19 @@
           </article>
         </div>
 
-        <!-- Map Preview Bar -->
-        <div class="map-preview">
+        <!-- Actual Map Point Target -->
+        <div class="map-preview" id="location">
           <div class="map-visual">
             <div class="map-pin" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <strong class="serif" style="font-size: 1.25rem;">Neralu Courtyard</strong>
-            <span style="font-size: 0.82rem; color: var(--charcoal-soft);">Nagarbhavi, Bengaluru 560072</span>
+            <span style="font-size: 0.82rem; color: var(--ink-soft);">Nagarbhavi, Bengaluru 560072</span>
           </div>
           <div class="map-info">
-            <span class="eyebrow" style="margin-bottom: 6px;">Getting There</span>
+            <span class="eyebrow" style="margin-bottom: 6px; color: var(--sky);">Arrival Point</span>
             <h3 class="serif" style="font-size: 1.5rem; margin-bottom: 8px;">Directions & Navigation</h3>
-            <p class="detail-secondary" style="margin-bottom: 14px;">Tap below to launch turn-by-turn directions directly on your phone.</p>
+            <p class="detail-secondary" style="margin-bottom: 14px;">1st Main Rd, off Nagarabhavi Main Road, Mudalapalya, Nagarbhavi, Bengaluru 560072</p>
             <div style="display: flex; flex-wrap: wrap; gap: 10px;">
               <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/search/?api=1&query=Neralu%20Courtyard%2C%201st%20Main%20Rd%2C%20off%20Nagarabhavi%20Main%20Road%2C%20SVG%20Nagar%2C%20Govindaraja%20Nagar%20Ward%2C%20Mudalapalya%2C%20Nagarbhavi%2C%20Bengaluru%2C%20Karnataka%20560072" target="_blank" rel="noopener noreferrer">Google Maps</a>
               <a class="btn btn-secondary btn-sm" href="https://maps.apple.com/?q=Neralu%20Courtyard%2C%201st%20Main%20Rd%2C%20off%20Nagarabhavi%20Main%20Road%2C%20SVG%20Nagar%2C%20Govindaraja%20Nagar%20Ward%2C%20Mudalapalya%2C%20Nagarbhavi%2C%20Bengaluru%2C%20Karnataka%20560072" target="_blank" rel="noopener noreferrer">Apple Maps</a>
@@ -794,19 +1481,41 @@
     </section>
   </main>
 
+  <!-- Sticky Bottom Map Bar (removed when #location is reached) -->
+  <aside class="sticky-map-bar" id="stickyMapBar" aria-label="Quick venue map bar">
+    <div class="sticky-map-meta">
+      <span class="sticky-map-dot" aria-hidden="true">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </span>
+      <div style="min-width: 0;">
+        <div class="sticky-map-title">Neralu Courtyard</div>
+        <div class="sticky-map-sub">Nagarbhavi, Bengaluru • Sun, Dec 13</div>
+      </div>
+    </div>
+    <div class="sticky-map-actions">
+      <a class="btn btn-coral btn-sm" href="https://www.google.com/maps/search/?api=1&query=Neralu%20Courtyard%2C%201st%20Main%20Rd%2C%20off%20Nagarabhavi%20Main%20Road%2C%20SVG%20Nagar%2C%20Govindaraja%20Nagar%20Ward%2C%20Mudalapalya%2C%20Nagarbhavi%2C%20Bengaluru%2C%20Karnataka%20560072" target="_blank" rel="noopener noreferrer">Maps</a>
+      <a class="btn btn-secondary btn-sm" href="#location">Go to Map</a>
+    </div>
+  </aside>
+
   <!-- Footer -->
   <footer>
     <div class="container">
       <p class="footer-names">Shalini & Madhusudan</p>
       <p class="footer-note">We can’t wait to celebrate this joyful chapter with you.</p>
-      <button type="button" class="btn btn-secondary btn-sm" id="shareWhatsappBtn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-        Share via WhatsApp
-      </button>
+      <button type="button" class="btn btn-secondary btn-sm" id="shareWhatsappBtn">Share via WhatsApp</button>
     </div>
   </footer>
 
-  <!-- Toast -->
+  <!-- Jungle theme only: butterflies fluttering across the page -->
+  <div class="butterfly-layer" aria-hidden="true">
+    <span class="butterfly bf1" style="--top: 12%; --size: 38px; --dur: 16s; --delay: -2s"><span class="bf-wings">🦋</span></span>
+    <span class="butterfly bf2 rev" style="--top: 30%; --size: 28px; --dur: 20s; --delay: -9s"><span class="bf-wings">🦋</span></span>
+    <span class="butterfly bf3" style="--top: 52%; --size: 34px; --dur: 18s; --delay: -5s"><span class="bf-wings">🦋</span></span>
+    <span class="butterfly bf4 rev" style="--top: 70%; --size: 30px; --dur: 15s; --delay: -11s"><span class="bf-wings">🦋</span></span>
+    <span class="butterfly bf5" style="--top: 86%; --size: 26px; --dur: 22s; --delay: -14s"><span class="bf-wings">🦋</span></span>
+  </div>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
@@ -831,36 +1540,116 @@
     // Live Countdown Timer
     function updateCountdown() {
       const target = new Date(EVENT_DETAILS.eventStartISO).getTime();
-      const now = Date.now();
-      const diff = Math.max(0, target - now);
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const mins = Math.floor((diff / (1000 * 60)) % 60);
-      const secs = Math.floor((diff / 1000) % 60);
-
-      document.getElementById("cdDays").textContent = String(days).padStart(2, "0");
-      document.getElementById("cdHours").textContent = String(hours).padStart(2, "0");
-      document.getElementById("cdMins").textContent = String(mins).padStart(2, "0");
-      document.getElementById("cdSecs").textContent = String(secs).padStart(2, "0");
+      const diff = Math.max(0, target - Date.now());
+      document.getElementById("cdDays").textContent = String(Math.floor(diff / 86400000)).padStart(2, "0");
+      document.getElementById("cdHours").textContent = String(Math.floor((diff / 3600000) % 24)).padStart(2, "0");
+      document.getElementById("cdMins").textContent = String(Math.floor((diff / 60000) % 60)).padStart(2, "0");
+      document.getElementById("cdSecs").textContent = String(Math.floor((diff / 1000) % 60)).padStart(2, "0");
     }
 
-    // Generate & Download .ics File
+    // Baby Footsteps + Twinkle Animation on Scroll
+    const trailEl = document.getElementById("footstepTrail");
+    const stepCount = 14;
+    const steps = [];
+    // Footstep colours follow the active theme
+    function themeStepPalette() {
+      const cs = getComputedStyle(document.documentElement);
+      return ["--coral", "--sage", "--sky", "--lavender", "--marigold"].map((v) => cs.getPropertyValue(v).trim());
+    }
+
+    function createBabyFootprintSVG(isRight, fillColor) {
+      return `
+        <svg viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg" style="${isRight ? "transform: scaleX(-1);" : ""}">
+          <path d="M16 40.2C10.4 40.2 7.2 36.6 6.8 31.2C6.4 25.6 8.2 20.2 10.6 17.6C12.4 15.7 14 15.2 16 15.2C18 15.2 19.6 15.7 21.4 17.6C23.8 20.2 25.6 25.6 25.2 31.2C24.8 36.6 21.6 40.2 16 40.2Z" fill="${fillColor}" fill-opacity="0.92"/>
+          <ellipse cx="9.2" cy="9.4" rx="3.4" ry="3.1" transform="rotate(-14 9.2 9.4)" fill="${fillColor}"/>
+          <ellipse cx="14.2" cy="6.1" rx="3.1" ry="2.9" transform="rotate(-6 14.2 6.1)" fill="${fillColor}"/>
+          <ellipse cx="19.4" cy="6.4" rx="2.8" ry="2.6" transform="rotate(4 19.4 6.4)" fill="${fillColor}"/>
+          <ellipse cx="23.6" cy="9.4" rx="2.5" ry="2.3" transform="rotate(12 23.6 9.4)" fill="${fillColor}"/>
+          <ellipse cx="26.8" cy="13.4" rx="2.1" ry="1.9" transform="rotate(20 26.8 13.4)" fill="${fillColor}"/>
+          <ellipse cx="11.4" cy="25" rx="2.1" ry="3.4" transform="rotate(-10 11.4 25)" fill="#FFFFFF" fill-opacity="0.28"/>
+        </svg>
+      `;
+    }
+
+    function buildFootsteps() {
+      trailEl.innerHTML = "";
+      steps.length = 0;
+      const stepPalette = themeStepPalette();
+      for (let i = 0; i < stepCount; i++) {
+      const el = document.createElement("div");
+      el.className = "baby-step";
+      const isRight = i % 2 === 1;
+      const xPercent = isRight ? 88 + ((i % 3) - 1) * 3 : 12 + ((i % 3) - 1) * 3;
+      const yPercent = 18 + (i / (stepCount - 1)) * 68;
+      const rotDeg = isRight ? 12 : -12;
+      const color = stepPalette[i % stepPalette.length];
+      el.style.setProperty("--x", `${xPercent}%`);
+      el.style.setProperty("--y", `${yPercent}%`);
+      el.style.setProperty("--rot", `${rotDeg}deg`);
+      el.innerHTML = createBabyFootprintSVG(isRight, color);
+      trailEl.appendChild(el);
+      steps.push(el);
+      }
+
+    }
+    buildFootsteps();
+
+    let highestStepIndex = -1;
+    function revealFootstepsOnScroll() {
+      const scrollable = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const progress = window.scrollY / scrollable;
+      const unlockedCount = Math.min(steps.length, Math.floor(progress * (steps.length + 1.5)));
+
+      steps.forEach((step, idx) => {
+        if (idx < unlockedCount) {
+          if (!step.classList.contains("active")) {
+            step.classList.add("active");
+          }
+          if (idx > highestStepIndex) {
+            highestStepIndex = idx;
+            step.classList.remove("twinkle");
+            void step.offsetWidth;
+            step.classList.add("twinkle");
+          }
+        } else {
+          step.classList.remove("active", "twinkle");
+          if (idx <= highestStepIndex) {
+            highestStepIndex = idx - 1;
+          }
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealFootstepsOnScroll, { passive: true });
+    revealFootstepsOnScroll();
+
+    // Remove Sticky Map Bar When Actual #location Map Point Reaches View
+    const stickyMapBar = document.getElementById("stickyMapBar");
+    const actualMapTarget = document.getElementById("location");
+
+    const mapObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const passedOrReached = entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight;
+        stickyMapBar.classList.toggle("unpinned", passedOrReached);
+      });
+    }, { threshold: 0.05 });
+
+    mapObserver.observe(actualMapTarget);
+
+    // .ics Download
     function downloadICS() {
       const start = new Date(EVENT_DETAILS.eventStartISO);
       const end = new Date(EVENT_DETAILS.eventEndISO);
-
-      const formatICSDate = (date) => date.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
-
-      const icsContent = [
+      const fmt = (d) => d.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+      const ics = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
         "PRODID:-//Baby Shower Invitation//EN",
         "BEGIN:VEVENT",
         `UID:baby-shower-${Date.now()}@invitation`,
-        `DTSTAMP:${formatICSDate(new Date())}`,
-        `DTSTART:${formatICSDate(start)}`,
-        `DTEND:${formatICSDate(end)}`,
+        `DTSTAMP:${fmt(new Date())}`,
+        `DTSTART:${fmt(start)}`,
+        `DTEND:${fmt(end)}`,
         `SUMMARY:Baby Shower — ${EVENT_DETAILS.parentsNames}`,
         `LOCATION:${EVENT_DETAILS.venueName}, ${EVENT_DETAILS.venueAddress}`,
         `DESCRIPTION:Join us to celebrate ${EVENT_DETAILS.parentsNames}!`,
@@ -868,7 +1657,7 @@
         "END:VCALENDAR"
       ].join("\r\n");
 
-      const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+      const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
@@ -880,18 +1669,15 @@
       showToast("Calendar invite (.ics) downloaded");
     }
 
-    // Copy Address
     document.getElementById("copyAddressBtn").addEventListener("click", async () => {
-      const full = `${EVENT_DETAILS.venueName}, ${EVENT_DETAILS.venueAddress}`;
       try {
-        await navigator.clipboard.writeText(full);
+        await navigator.clipboard.writeText(`${EVENT_DETAILS.venueName}, ${EVENT_DETAILS.venueAddress}`);
         showToast("Venue address copied");
       } catch {
         showToast("Could not copy address");
       }
     });
 
-    // Share via WhatsApp
     document.getElementById("shareWhatsappBtn").addEventListener("click", async () => {
       const text = `You're invited to celebrate ${EVENT_DETAILS.parentsNames}!\nDate: ${EVENT_DETAILS.displayDate} (${EVENT_DETAILS.displayTime})\nVenue: ${EVENT_DETAILS.venueName}, ${EVENT_DETAILS.venueAddress}\nInvitation: ${window.location.href}`;
       if (navigator.share) {
@@ -908,25 +1694,72 @@
       }
     });
 
-    // Calendar buttons
     document.getElementById("heroCalendarBtn").addEventListener("click", downloadICS);
     document.getElementById("cardCalendarBtn").addEventListener("click", downloadICS);
 
-    // Scroll Reveal Observer
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
 
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
-    // Start Countdown
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+    // Envelope intro: shake, open the flap, slide out the letter, then reveal the invitation
+    const envelopeGate = document.getElementById("envelopeGate");
+    const envelopeBtn = document.getElementById("envelopeBtn");
+    const gateSkip = document.getElementById("gateSkip");
+    let gateTimers = [];
+
+    function revealSite() {
+      gateTimers.forEach(clearTimeout);
+      envelopeGate.classList.add("opened");
+      document.body.classList.remove("gate-locked");
+      document.body.classList.add("revealed");
+    }
+
+    function burstSparkles() {
+      const rect = envelopeBtn.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const glyphs = ["✦", "✧", "♥", "✿", "❋", "✦"];
+      const cs = getComputedStyle(document.documentElement);
+      const colors = ["--marigold", "--coral-deep", "--sky", "--lavender", "--sage"].map((v) => cs.getPropertyValue(v).trim());
+      const count = 24;
+
+      for (let i = 0; i < count; i++) {
+        const s = document.createElement("span");
+        s.className = "spark";
+        s.textContent = glyphs[i % glyphs.length];
+        const angle = (i / count) * Math.PI * 2 + Math.random() * 0.35;
+        const dist = 120 + Math.random() * 130;
+        s.style.left = `${cx}px`;
+        s.style.top = `${cy}px`;
+        s.style.setProperty("--dx", `${Math.cos(angle) * dist}px`);
+        s.style.setProperty("--dy", `${Math.sin(angle) * dist}px`);
+        s.style.setProperty("--s", `${12 + Math.random() * 14}px`);
+        s.style.setProperty("--c", colors[i % colors.length]);
+        s.style.animationDelay = `${Math.random() * 0.15}s`;
+        envelopeGate.appendChild(s);
+        setTimeout(() => s.remove(), 1700);
+      }
+    }
+
+    function openEnvelope() {
+      if (envelopeBtn.disabled) return;
+      envelopeBtn.disabled = true;
+      envelopeBtn.classList.add("shake");
+      envelopeGate.classList.add("opening");
+
+      gateTimers.push(
+        setTimeout(() => {
+          envelopeBtn.classList.remove("shake");
+          envelopeBtn.classList.add("open");
+        }, 450),
+        setTimeout(burstSparkles, 1000),
+        setTimeout(revealSite, 2900)
+      );
+    }
+
+    envelopeBtn.addEventListener("click", openEnvelope);
+    gateSkip.addEventListener("click", revealSite);
+    envelopeBtn.focus({ preventScroll: true });
   </script>
 </body>
 </html>
