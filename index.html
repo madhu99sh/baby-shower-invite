@@ -395,13 +395,27 @@
       text-align: center;
     }
 
+    .photo-grid--single {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 780px;
+    }
+
+    @media (max-width: 720px) {
+      .photo-grid--single {
+        max-width: 100%;
+      }
+    }
+    
+
     .photo-frame {
       position: relative;
-      aspect-ratio: 4 / 5;
-      border-radius: 140px 140px 18px 18px;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 22px;
       overflow: hidden;
       background: var(--sage-light);
-      cursor: pointer;
+      display: block;
+      object-fit: cover;
     }
 
     .photo-frame img {
@@ -747,14 +761,17 @@
         </div>
 
         <!-- Photo Gallery -->
-        <div class="photo-grid" aria-label="Moments photo gallery">
+        <!-- Photo Gallery -->
+        <div class="photo-grid photo-grid--single" aria-label="Moments photo gallery">
           <figure class="photo-card">
-            <label class="photo-frame" title="Tap to preview a photo">
+            <div class="photo-frame">
               <img src="image1.jpg" alt="Soft sunlit nursery details" />
-            </label>
-            <figcaption class="photo-caption">Sunlit mornings & gentle dreams</figcaption>
+            </div>
+            <figcaption class="photo-caption">Sunlit mornings &amp; gentle dreams</figcaption>
           </figure>
         </div>
+
+        
       </div>
     </section>
 
