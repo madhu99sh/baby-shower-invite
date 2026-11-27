@@ -370,20 +370,10 @@
       text-align: right;
     }
 
-    /* Photo Gallery */
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 860px;
+    /* Single Landscape Photo */
+    .photo-showcase {
+      max-width: 780px;
       margin: 0 auto;
-    }
-
-    @media (max-width: 720px) {
-      .photo-grid {
-        grid-template-columns: 1fr;
-        max-width: 380px;
-      }
     }
 
     .photo-card {
@@ -395,27 +385,12 @@
       text-align: center;
     }
 
-    .photo-grid--single {
-      grid-template-columns: minmax(0, 1fr);
-      max-width: 780px;
-    }
-
-    @media (max-width: 720px) {
-      .photo-grid--single {
-        max-width: 100%;
-      }
-    }
-    
-
     .photo-frame {
-      position: relative;
       width: 100%;
       aspect-ratio: 4 / 3;
-      border-radius: 22px;
+      border-radius: 18px;
       overflow: hidden;
       background: var(--sage-light);
-      display: block;
-      object-fit: cover;
     }
 
     .photo-frame img {
@@ -423,31 +398,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.35s ease;
-    }
-
-    .photo-card:hover .photo-frame img {
-      transform: scale(1.03);
-    }
-
-    .photo-upload-hint {
-      position: absolute;
-      inset: 0;
-      background: rgba(46, 46, 46, 0.42);
-      color: #FFFFFF;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-      padding: 12px;
-    }
-
-    .photo-frame:hover .photo-upload-hint {
-      opacity: 1;
     }
 
     .photo-caption {
@@ -747,7 +697,7 @@
       <span class="divider-line"></span>
     </div>
 
-    <!-- 2. Our Story & Photo Gallery / Bump & Beyond -->
+    <!-- 2. Our Story & Featured Moment / Bump & Beyond -->
     <section id="story" class="reveal">
       <div class="container">
         <div class="section-header">
@@ -760,18 +710,15 @@
           <p class="story-signoff">With love, Shalini & Madhusudan</p>
         </div>
 
-        <!-- Photo Gallery -->
-        <!-- Photo Gallery -->
-        <div class="photo-grid photo-grid--single" aria-label="Moments photo gallery">
+        <!-- Single Landscape Photo -->
+        <div class="photo-showcase" aria-label="Featured moment photo">
           <figure class="photo-card">
             <div class="photo-frame">
               <img src="image1.jpg" alt="Soft sunlit nursery details" />
             </div>
-            <figcaption class="photo-caption">Sunlit mornings &amp; gentle dreams</figcaption>
+            <figcaption class="photo-caption">Sunlit mornings & gentle dreams</figcaption>
           </figure>
         </div>
-
-        
       </div>
     </section>
 
@@ -897,22 +844,6 @@
       document.getElementById("cdMins").textContent = String(mins).padStart(2, "0");
       document.getElementById("cdSecs").textContent = String(secs).padStart(2, "0");
     }
-
-    // Photo Gallery Local Preview
-    document.querySelectorAll(".photo-card").forEach((card) => {
-      const input = card.querySelector(".photo-input");
-      const img = card.querySelector("img");
-      input.addEventListener("change", (e) => {
-        const file = e.target.files && e.target.files[0];
-        if (!file) return;
-        const reader = new FileReader();
-        reader.onload = (ev) => {
-          img.src = ev.target.result;
-          showToast("Photo preview updated");
-        };
-        reader.readAsDataURL(file);
-      });
-    });
 
     // Generate & Download .ics File
     function downloadICS() {
