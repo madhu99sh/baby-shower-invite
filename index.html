@@ -717,30 +717,6 @@
       margin-bottom: 22px;
     }
 
-    /* Jungle theme: animals */
-    .jungle-animal {
-      position: absolute;
-      z-index: 0;
-      font-size: 42px;
-      line-height: 1;
-      pointer-events: none;
-      filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.14));
-      animation: animalBob 4.2s ease-in-out infinite;
-      animation-delay: var(--d, 0s);
-    }
-
-    .jungle-animal.a1 { top: 9%; left: 7%; }
-    .jungle-animal.a2 { top: 14%; right: 8%; }
-    .jungle-animal.a3 { top: 52%; left: 3%; }
-    .jungle-animal.a4 { top: 60%; right: 4%; }
-    .jungle-animal.a5 { bottom: 13%; left: 12%; font-size: 36px; }
-
-
-    @keyframes animalBob {
-      0%, 100% { transform: translateY(0) rotate(-5deg); }
-      50% { transform: translateY(-16px) rotate(5deg); }
-    }
-
     .jungle-strip {
       position: relative;
       z-index: 3;
@@ -765,13 +741,6 @@
     }
 
     @media (max-width: 520px) {
-      .jungle-animal {
-        font-size: 30px;
-      }
-
-      .jungle-animal.a5 {
-        font-size: 26px;
-      }
     }
 
     /* Jungle theme: butterflies drifting across the page */
@@ -821,7 +790,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .jungle-animal,
       .jungle-strip span {
         animation: none !important;
       }
@@ -1280,11 +1248,6 @@
     <span class="gate-blob b2" aria-hidden="true"></span>
     <span class="gate-blob b3" aria-hidden="true"></span>
 
-    <!-- Jungle theme only: animals drifting around the envelope -->
-    <span class="jungle-animal a1" style="--d: 0s" aria-hidden="true">🦁</span>
-    <span class="jungle-animal a3" style="--d: -2.5s" aria-hidden="true">🦜</span>
-    <span class="jungle-animal a4" style="--d: -0.8s" aria-hidden="true">🦒</span>
-    <span class="jungle-animal a5" style="--d: -3s" aria-hidden="true">🐢</span>
 
     <div class="envelope-wrap">
       <p class="envelope-hint">You've received a little invitation</p>
@@ -1405,7 +1368,7 @@
         <div class="photo-showcase">
           <figure class="photo-card">
             <div class="photo-frame">
-              <img src="image1.jpg" alt="Soft sunlit nursery details" />
+              <img src="image5.png" alt="Soft sunlit nursery details" />
             </div>
             <figcaption class="photo-caption">Sunlit mornings & gentle dreams</figcaption>
           </figure>
@@ -1629,8 +1592,8 @@
 
     const mapObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const passedOrReached = entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight;
-        stickyMapBar.classList.toggle("unpinned", passedOrReached);
+        // Hide the bar only while the map is on screen; show it again once scrolled past
+        stickyMapBar.classList.toggle("unpinned", entry.isIntersecting);
       });
     }, { threshold: 0.05 });
 
